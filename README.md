@@ -3,10 +3,10 @@ An okayish python script to generate a random Euler circuit with given number of
 
 
 ## Executing the Script
-Just use your python ide or terminal commands to run the script and give the number of vertices and edges as asked.
+Just download or copy the code in testcasegen.py,use your python IDE or terminal to run the script and give the number of vertices and edges as asked.The output is generated in the input format specified by the assignment along with one of the possible outputs for the assignment program.
 
-## Very Very Important
-The program will run into infinite loop if the euler circuit does  not exist.Just stop the execution. There might be cases where euler circuit exists and it runs into an infinite loop, don't kill me for that. I don't guarantee 100% accuracy for this program. You can always verify yourself.
+## Very Very Important ⭐⭐⭐
+The program will run into infinite loop if the euler circuit does  not exist for the number of edges and vertices given. Just stop the execution. There might be cases where euler circuit exists and it runs into an infinite loop, don't kill me for that. I don't guarantee 100% accuracy for this program. You can always verify yourself.
 
 ## Sample Input and Output
 ```
@@ -48,3 +48,5 @@ Drop an issue or do a pull request
 
 ## Disclaimer
 I am not promising you 100% accuracy for this script. It works for me so I am sharing it. If it works for you share it too.
+
+## Drop a ⭐ if you found it useful😁

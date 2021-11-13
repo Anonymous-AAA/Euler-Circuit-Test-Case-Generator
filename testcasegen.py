@@ -15,7 +15,7 @@ k=[]
 j=[]
 Close={}
 u=True
-
+flag=True
 if n<3 or m<n or m>math.comb(n,2):
     print(f"Impossible to have an euler circuit with no repeating edges and self loops having {n} vertices and {m} edges.")
     sys.exit()
@@ -88,48 +88,78 @@ def euler_part():
 
 
 
+
+def complete():
+    global u,Close,k
+    while u:
+            if len(set().union(Close[k[m-2]],Close[k[0]]))<n:
+                ch=random.randrange(0,n)
+                u=ch in Close[k[m-2]] or ch in Close[k[0]]
+            else:
+                euler()
+                after_euler()
+
+            
+
+    # print(k)  
+    # print(Close)
+    k.append(ch)
+    k.append(k[0])
+    # print(k)  
+    # print(Close)
+
+
+
 euler()
 after_euler()
+complete()
 
-
-while u:
-        if len(set().union(Close[k[m-2]],Close[k[0]]))<n:
-            ch=random.randrange(0,n)
-            u=ch in Close[k[m-2]] or ch in Close[k[0]]
-        else:
-            euler()
-            after_euler()
-
+for x in range(n):
+    if x not in k:
+        flag=False
+        break
+    else :
+        flag=True
         
 
-# print(k)  
-# print(Close)
-k.append(ch)
-k.append(k[0])
-# print(k)  
-# print(Close)
-
-for i in range(m):
-    j.append([k[i],k[i+1]])
-    random.shuffle(j[i])
 
 
-random.shuffle(j)
+while True:
+    if flag==True:
+        for i in range(m):
+            j.append([k[i],k[i+1]])
+            random.shuffle(j[i])
 
-print(n)
-print(m)
 
-for i in j:
-    print(f"{i[0]} {i[1]}")
+        random.shuffle(j)
+
+        print(n)
+        print(m)
+
+        for i in j:
+            print(f"{i[0]} {i[1]}")
 
 
 
-print("\n\n\nOne of the possible outputs:")
+        print("\n\n\nOne of the possible outputs:")
 
-for i in range(m):
-    print(f"{k[i]} {k[i+1]}")
+        for i in range(m):
+            print(f"{k[i]} {k[i+1]}")
+        
+        break
 
+    else :
 
+        euler()
+        after_euler()
+        complete()
+
+        for x in range(n):
+            if x not in k:
+                flag=False
+                break
+            else:
+                flag=True
 
 
 
